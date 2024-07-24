@@ -6,19 +6,21 @@ public class SumOfAList {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
 
-        ArrayList<Integer> list = new ArrayList<>();
         while (true) {
-            int input = Integer.valueOf(scanner.nextLine());
+            int input = scanner.nextInt();
             if (input == -1) {
                 break;
             }
-
-            list.add(input);
+            numbers.add(input);
         }
 
-        System.out.println("");
+        int sum = 0;
+        for (int number : numbers) {
+            sum += number;
+        }
 
-        // toteuta listan lukujen summan laskeminen tänne
+        System.out.println("Sum: " + sum);
     }
 }

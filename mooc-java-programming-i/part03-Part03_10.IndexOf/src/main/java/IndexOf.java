@@ -6,19 +6,23 @@ public class IndexOf {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
 
-        ArrayList<Integer> list = new ArrayList<>();
         while (true) {
-            int input = Integer.valueOf(scanner.nextLine());
+            int input = scanner.nextInt();
             if (input == -1) {
                 break;
             }
-
-            list.add(input);
+            numbers.add(input);
         }
 
-        System.out.println("");
+        System.out.print("Search for? ");
+        int searchNumber = scanner.nextInt();
 
-        // implement here finding the indices of a number
+        for (int i = 0; i < numbers.size(); i++) {
+            if (numbers.get(i) == searchNumber) {
+                System.out.println(searchNumber + " is at index " + i);
+            }
+        }
     }
 }

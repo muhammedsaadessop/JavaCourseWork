@@ -6,19 +6,24 @@ public class GreatestInList {
 
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
+        ArrayList<Integer> numbers = new ArrayList<>();
 
-        ArrayList<Integer> list = new ArrayList<>();
         while (true) {
-            int input = Integer.valueOf(scanner.nextLine());
+            int input = scanner.nextInt();
             if (input == -1) {
                 break;
             }
-
-            list.add(input);
+            numbers.add(input);
         }
-        
-        System.out.println("");
 
-        // implement finding the greatest number in the list here
+        int greatest = numbers.get(0);
+
+        for (int i = 1; i < numbers.size(); i++) {
+            int number = numbers.get(i);
+            if (greatest < number) {
+                greatest = number;
+            }
+        }
+        System.out.println("The greatest number: " + greatest);
     }
 }
